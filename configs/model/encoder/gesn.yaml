@@ -1,0 +1,6 @@
+_target_: gsq.model.ReservoirEncoder
+hidden_channels: ???
+num_layers: 1
+input_scale: ???
+recurrent_scale: ???
+random_seed: ${seed}

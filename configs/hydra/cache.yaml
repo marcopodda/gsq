@@ -1,0 +1,12 @@
+# @package hydra
+
+run:
+  dir: ${paths.cache_dir}/jobs/${hydra.job.override_dirname}
+job:
+  chdir: true
+  config:
+    override_dirname:
+      exclude_keys:
+        - datamodule.dataset.fold_index
+        - model.encoder.num_layers
+        - model.encoder.random_seed

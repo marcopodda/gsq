@@ -1,0 +1,7 @@
+name: bfp
+sample_size: 100
+seeds_per_class: 10
+train_seeds_per_class: 10
+validation_seeds_per_class: 10
+match_train_split_size: true
+max_depth: 10

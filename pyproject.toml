@@ -1,0 +1,59 @@
+[project]
+authors = [{name = "Marco Podda", email = "marco.podda851@gmail.com"}]
+dependencies = [
+  "torch>=2.4,<3",
+  "torch-geometric>=2.6,<3",
+  "lightning>=2.4,<3",
+  "torchmetrics>=1.4,<2",
+  "hydra-core>=1.3,<2",
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<4",
+  "scipy>=1.13,<2",
+  "pyyaml>=6,<7",
+  "quapy>=0.2.3",
+]
+description = "Reproducible graph quantification experiments"
+maintainers = [
+  {name = "Marco Podda", email = "marco.podda@unipi.it"},
+]
+name = "gsq"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+version = "0.1.0"
+license = {file = "LICENSE"}
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gsq"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"configs" = "gsq/configs"
+"data/splits" = "gsq/splits"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "/configs",
+  "/data/splits",
+  "/src/gsq",
+  "/tests",
+  "/LICENSE",
+  "/README.md",
+  "/pyproject.toml",
+  "/uv.lock",
+]
+
+[project.scripts]
+gsq = "gsq.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/marcopodda/gsq"
+
+[dependency-groups]
+dev = [
+  "pytest",
+  "ruff",
+  "ty",
+]

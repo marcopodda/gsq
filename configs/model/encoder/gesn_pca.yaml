@@ -1,0 +1,9 @@
+_target_: gsq.model.PCAReservoirEncoder
+hidden_channels: ???
+reservoir_channels: ???
+num_layers: 1
+input_scale: ???
+recurrent_scale: ???
+random_seed: ${seed}
+pca_oversampling: 16
+pca_iterations: 4

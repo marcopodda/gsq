@@ -1,0 +1,10 @@
+# @package _global_
+loader:
+  _target_: torch_geometric.loader.DataLoader
+  batch_size: 1
+  num_workers: 0
+  pin_memory: true
+
+datamodule:
+  _target_: gsq.data.datamodule.QuantificationDataModule
+  dataset: ???

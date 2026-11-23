@@ -1,0 +1,17 @@
+# path to root directory
+root_dir: ${oc.env:PROJECT_ROOT}
+
+# path to data directory
+data_dir: ${oc.env:DATA_DIR}
+
+# path to logging directory
+log_dir: ${oc.env:LOGS_DIR}
+
+# path to reusable GESN representations
+cache_dir: ${oc.env:CACHE_DIR}
+
+# path to output directory, created dynamically by hydra
+output_dir: ${hydra:runtime.output_dir}
+
+# path to working directory
+work_dir: ${hydra:runtime.cwd}

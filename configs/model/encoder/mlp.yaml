@@ -1,0 +1,5 @@
+_target_: gsq.model.NodeEncoder
+hidden_channels: ???
+num_layers: ???
+encoder_type: mlp
+dropout: 0.1

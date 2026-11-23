@@ -1,0 +1,2 @@
+_target_: gsq.model.DeepSetsPooler
+channels: ${model.encoder.hidden_channels}

@@ -1,0 +1,12 @@
+# @package _global_
+
+model:
+  calibration_mode: none
+  quantifier:
+    _target_: gsq.model.KDEyMaximumLikelihood
+    num_classes: ${num_classes}
+    bandwidth: 0.1
+    structural_correction: false
+    correction_steps: 10
+    correction_restart_probability: 0.1
+    correction_kernel_weight: 0.9

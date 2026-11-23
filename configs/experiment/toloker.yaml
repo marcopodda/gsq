@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - base
+
+in_channels: 10
+num_classes: 2
+datamodule:
+  dataset:
+    _target_: gsq.data.datasets.Toloker
+    fold_index: ???
+name: toloker

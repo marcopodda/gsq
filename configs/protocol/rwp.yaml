@@ -1,0 +1,8 @@
+name: rwp
+sample_size: 100
+num_seeds: 100
+train_num_seeds: 100
+validation_num_seeds: 100
+match_train_split_size: true
+restart_probability: 0.1
+max_steps: 10000

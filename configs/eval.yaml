@@ -1,0 +1,12 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - protocol: app
+  - paths: default
+  - hydra: eval
+
+seed: 0
+task: test
+run_dir: ???
+error_metrics: [ae, rae, mse, nae, nkld]

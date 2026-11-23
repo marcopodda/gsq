@@ -1,0 +1,6 @@
+_target_: gsq.model.APPNPEncoder
+hidden_channels: 64
+num_layers: 2
+propagation_steps: 10
+restart_probability: 0.1
+dropout: 0.1

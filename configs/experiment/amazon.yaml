@@ -1,0 +1,12 @@
+# @package _global_
+defaults:
+  - base
+
+datamodule:
+  dataset:
+    _target_: gsq.data.datasets.AmazonRatings
+    fold_index: ???
+
+in_channels: 300
+num_classes: 5
+name: amazon

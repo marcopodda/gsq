@@ -1,0 +1,3 @@
+_target_: torch.nn.Linear
+in_features: ${model.encoder.hidden_channels}
+out_features: ${num_classes}

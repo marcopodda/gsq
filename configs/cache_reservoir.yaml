@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - paths: default
+  - hydra: cache
+  - model: symmetric
+  - experiment: ???
+  - override /model/encoder: gesn
+  - override /model/head: softmax
+
+task: cache_reservoir
+seed: 0
+device: auto
+projection_channels: []
+
+# Splits are irrelevant to reservoir features; fold zero only loads one version
+# of the otherwise identical transductive graph.
+datamodule:
+  dataset:
+    fold_index: 0

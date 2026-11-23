@@ -1,0 +1,13 @@
+# @package _global_
+defaults:
+  - base
+
+in_channels: 1433
+num_classes: 2
+name: cora-binary-2
+
+datamodule:
+  dataset:
+    _target_: gsq.data.datasets.Cora
+    target: 2
+    fold_index: ???

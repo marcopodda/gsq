@@ -1,0 +1,44 @@
+defaults:
+  - encoder: ???
+  - pooler: mean
+  - _self_
+  - head: ???
+
+_target_: gsq.model.network.QuantificationNetwork
+
+num_classes: ${num_classes}
+bag_protocol: ${protocol}
+pooling_chunk_size: ${runtime.pooling_chunk_size}
+evaluation_seed: 0
+calibration_mode: none
+calibration_max_steps: 100
+calibration_regularization: 1e-3
+
+encoder:
+  in_channels: ${in_channels}
+
+pooler: {}
+
+head:
+  in_channels: ${model.encoder.hidden_channels}
+  num_classes: ${num_classes}
+
+optimizer:
+  _target_: torch.optim.AdamW
+  lr: 1e-3
+  weight_decay: 1e-5
+
+scheduler:
+  scheduler:
+    _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+    mode: min
+    factor: 0.5
+    # Validation runs every 10 epochs; five checks preserve a 50-epoch window.
+    patience: 5
+    threshold: 5e-5
+    threshold_mode: abs
+    min_lr: 1e-6
+  extras:
+    monitor: ae/val
+    interval: epoch
+    frequency: 10

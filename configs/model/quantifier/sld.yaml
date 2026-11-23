@@ -1,0 +1,5 @@
+_target_: gsq.model.SLD
+num_classes: ${num_classes}
+max_iterations: 1000
+tolerance: 1e-4
+epsilon: 1e-4
